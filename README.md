@@ -89,6 +89,7 @@ First of all, for the only missing value in the name column, we conclude it as M
     - Here is the graph showing the number of recipes have `wheat` in their `ingredients`, and that of recipes do not have `wheat` in their ingredients. And we can see that there is no apparent differences among groups that have `wheat` in their `ingredients, and groups that does not have `wheat` in their `ingredients`.
     <iframe src="assets/has_wheat_and_rating_missingness.html" width=800 height=600 frameBorder=0></iframe>
     - Moreover, we have the empirical distribution of our permutation test, and we can see that the observation lies in the position that is close to the middle, which supports out assertion that we fail to reject the null hypothesis.
+    
     <iframe src="assets/rating_vs._has_wheat.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
