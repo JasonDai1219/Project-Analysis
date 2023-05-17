@@ -13,8 +13,44 @@ There are 731927 rows in the `interactions` dataset, and we will focus on the
 `user_id`, `recipe_id`, `date`, `rating` columns. At the same time, there are 83782 rows in the `recipes` dataset, and we will focus on the `name`, `id`, `minutes`, `contributor_id`, `submitted` columns.
 
 ---
+## Cleaning and EDA (Exploratory Data Analysis)
 
-## Univariate Analysis
+### Data Cleaning
+
+First, we left merge the `recipes` and `interactions` datasets together to clean the data as the analysis would be easier to conduct and understand if the cooking time and ratings are on the same dataset. We fill all the ratings of 0 with `np.nan` since the rating should be in the range of 1 to 5 (inclusive), and a 0 means the user did not fill out the rate.
+
+Then we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataset by grouping it by the `recipe_id`.
+| name                                 |   recipe_id |   minutes |   contributor_id | submitted   |   avg_rating |          user_id |   recipe_id | date       |   rating |
+|:-------------------------------------|------------:|----------:|-----------------:|:------------|-------------:|-----------------:|------------:|:-----------|---------:|
+| 1 brownies in the world    best ever |      333281 |        40 |           985201 | 2008-10-27  |            4 | 386585           |      333281 | 2008-11-19 |        4 |
+| 1 in canada chocolate chip cookies   |      453467 |        45 |          1848091 | 2011-04-11  |            5 | 424680           |      453467 | 2012-01-26 |        5 |
+| 412 broccoli casserole               |      306168 |        40 |            50969 | 2008-05-30  |            5 |  29782           |      306168 | 2008-12-31 |        5 |
+| 412 broccoli casserole               |      306168 |        40 |            50969 | 2008-05-30  |            5 |      1.19628e+06 |      306168 | 2009-04-13 |        5 |
+| 412 broccoli casserole               |      306168 |        40 |            50969 | 2008-05-30  |            5 | 768828           |      306168 | 2013-08-02 |        5 |
+
+
+Finally, we clean the `interactions` dataset by dropping the `review` column, which we will not focus on. 
+|    user_id |   recipe_id | date       |   rating |
+|-----------:|------------:|:-----------|---------:|
+|    1293707 |       40893 | 2011-12-21 |        5 |
+|     126440 |       85009 | 2010-02-27 |        5 |
+|      57222 |       85009 | 2011-10-01 |        5 |
+|     124416 |      120345 | 2011-08-06 |      nan |
+| 2000192946 |      120345 | 2015-05-10 |        2 |
+
+
+We also keep the columns we are using, whcih are `name`,`recipe_id`,`minutes`,`contributor_id`,`submitted`, and `avg_rating`, in the rest of our analysis in the `recipes` dataset, and add the `avg_rating` column to it for our future analysis on the relationship between the cooking time and average rating of recipes.
+| name                                 |   recipe_id |   minutes |   contributor_id | submitted   |   avg_rating |
+|:-------------------------------------|------------:|----------:|-----------------:|:------------|-------------:|
+| 1 brownies in the world    best ever |      333281 |        40 |           985201 | 2008-10-27  |            4 |
+| 1 in canada chocolate chip cookies   |      453467 |        45 |          1848091 | 2011-04-11  |            5 |
+| 412 broccoli casserole               |      306168 |        40 |            50969 | 2008-05-30  |            5 |
+| millionaire pound cake               |      286009 |       120 |           461724 | 2008-02-12  |            5 |
+| 2000 meatloaf                        |      475785 |        90 |          2202916 | 2012-03-06  |            5 |
+
+---
+
+### Univariate Analysis
 
 1. Here is the distribution of minutes(excluded extreme outliers) in our adjusted recipes dtataset: *recipes_new*
 <iframe src="assets/minutes_distribution.html" width=800 height=600 frameBorder=0></iframe>
@@ -30,7 +66,7 @@ Later on, we will explore this question, and now, let us take a look at bivariat
 
 ---
 
-## Bivariate Analysis
+### Bivariate Analysis
 
 1. Here, we present the scatter plot of timing vs. rating of recipes that takes *less than 180 minutes to work on*:
 <iframe src="assets/minutes_less_than_180_vs._avg_rating.html" width=800 height=600 frameBorder=0></iframe>
@@ -45,7 +81,7 @@ In the first look of this scatter plot, you may think that it is kind of strange
 In the graph of recipes that takes more than 180 minutes(3 hours), we can still see the pattern that more 5 ratings are those recipes that has less time, however, since there are not many recipes that takes time longer than 3 hours, so our analysis would not focus on these recipes.
 
 ---
-## Interesting Aggregate
+### Interesting Aggregate
 
 `print(interesting_aggregates.head().to_markdown(index = False))`
 
@@ -94,6 +130,20 @@ First of all, for the only missing value in the name column, we conclude it as M
     - Moreover, we have the empirical distribution of our permutation test, and we can see that the observation lies in the position that is close to the middle, which supports out assertion that we fail to reject the null hypothesis.
     
     <iframe src="assets/raing_vs._has_wheat.html" width=800 height=600 frameBorder=0></iframe>
+
+---
+
+## Hypothesis Testing
+
+Our null hypothesis is 
+> There is no significant relationship between cooking time and average rating of recipes.
+
+The alternative hypothesis is 
+> There is a significant relationship between cooking time and average rating of recipes. The less cooking time (less than 180 min) required, the higher the rating is.
+
+Since the typical preparation of a meal would be under 3 hours, we divide the dataset into two groups, which are the recipes with cooking time more than or equal to 180 min and those are less than 180 min. The test statistics chosen is the difference between the means of the ratings of the two groups. We will conduct the permutation test under the significance level of 5%. 
+
+The resulting p-value is 0.0, which is lower than 0.05. Therefore, we reject the null hypothesis.
 
 ---
 
