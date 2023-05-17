@@ -120,10 +120,10 @@ First of all, for the only missing value in the name column, we conclude it as M
     - Here is the graph showing where the observation lies in the distribution of  *the number of steps* when *rating* is missing and when *rating* is not missing.
     <iframe src="assets/n_steps_by_missingness_of_ratings.html" width=800 height=600 frameBorder=0></iframe>
     - As we can see in the above graph, the distribution of step numbers when rating is missing has a `bimodal` distribution, which is different from that of the distribution of *step numbers* when rating is not missing. Thus, we think an appropriate test statistic in this situation is the `Kolmogorov-Smirnov` test statistic. Since without looking `in such a detailed scope` we may say that these two distribution looks similar, but if we compare the `cdf`s of these two distribution, we would realize that the difference is apparent.
+    - `Analysis process`: we think the missingness of the `rating` column may depends on `the number of steps` a recipe requires. Therefore, we would like to make a permutation test to see if the missingnes of `rating` of a recipe actually depends on how many `steps` it has.
     - And here, we have the empirical dustribution of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, therefore, that implies that we should reject the null hypothesis of this permutation test.
     <iframe src="assets/rating_vs._nsteps.html" width=800 height=600 frameBorder=0></iframe>
 
-    - `Analysis process`: we think the missingness of the `rating` column may depends on `the number of steps` a recipe requires. Therefore, we would like to make a permutation test to see if the missingnes of `rating` of a recipe actually depends on how many `steps` it has.
     - `Result`: accoridng to the permutation test we made, the p-value is `0.0`, which is much smaller than our significant level, thus we reject the null hypothesis. 
 
 2. In our analysis, we also tried to explore whether the missingness of the *rating* column depends on the recipe has `wheat` in its *ingredients* or not.
@@ -134,10 +134,10 @@ First of all, for the only missing value in the name column, we conclude it as M
     - The significance level is at 5%
     - Here is the graph showing the number of recipes have `wheat` in their `ingredients`, and that of recipes do not have `wheat` in their ingredients. And we can see that there is no apparent differences among groups that have `wheat` in their `ingredients, and groups that does not have `wheat` in their `ingredients`.
     <iframe src="assets/has_wheat_and_rating_missingness.html" width=800 height=600 frameBorder=0></iframe>
+    - `Analysis Process`: as we think the missingness of the `rating` column may relates to whether it has `wheat` in its `ingredients` or not. Thus we performed a permutation test again to investigate this question.
     - Moreover, we have the empirical distribution of our permutation test, and we can see that the observation lies in the position that is close to the middle, which supports out assertion that we fail to reject the null hypothesis.
     <iframe src="assets/raing_vs._has_wheat.html" width=800 height=600 frameBorder=0></iframe>
 
-     - `Analysis Process`: as we think the missingness of the `rating` column may relates to whether it has `wheat` in its `ingredients` or not. Thus we performed a permutation test again to investigate this question.
     - `Result`: according to our permutation test, the p-value is `0.301`, which is greater than our significance level: `0.05`, thus we fail to reject the null hypothesis.
 
 ---
