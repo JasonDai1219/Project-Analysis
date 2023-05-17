@@ -1,5 +1,5 @@
 # Project-Analysis
-This is a project of DSC 80 at University of California San Diego that analyzes the relationship among ratings of recipes and times required of recipes.
+This is a project of DSC 80 at University of California San Diego that analyzes the relationship among average ratings of recipes and times required of recipes.
 
 ---
 ## Introduction
