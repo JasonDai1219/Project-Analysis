@@ -123,7 +123,7 @@ First of all, for the only missing value in the name column, we conclude it as M
     - And here, we have the empirical dustribution of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, therefore, that implies that we should reject the null hypothesis of this permutation test.
     <iframe src="assets/rating_vs._nsteps.html" width=800 height=600 frameBorder=0></iframe>
 
-    - `Analysis process`: we think the missingness of the `rating` column amy depend on `the number of steps` a recipe requires. Therefore, we would like to make a permutation test to see if the missingnes of `rating` of a recipe actually depends on how many `steps` it has.
+    - `Analysis process`: we think the missingness of the `rating` column may depends on `the number of steps` a recipe requires. Therefore, we would like to make a permutation test to see if the missingnes of `rating` of a recipe actually depends on how many `steps` it has.
     - `Result`: accoridng to the permutation test we made, the p-value is `0.0`, which is much smaller than our significant level, thus we reject the null hypothesis. 
 
 2. In our analysis, we also tried to explore whether the missingness of the *rating* column depends on the recipe has `wheat` in its *ingredients* or not.
