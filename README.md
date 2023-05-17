@@ -76,7 +76,6 @@ Later on, we will explore this question, and now, let us take a look at bivariat
 
 In the first look of this scatter plot, you may think that it is kind of strange. However, we can take a closer look at the `UPPER LEFT` part of this graph, which has a `MUCH MORE` dense concentration of points than other parts in the graph. This graph also tells us that the `x-axis` represents `minutes` that a recipe requires, and the `y-axis` represents the `average rating` of a recipe. Therefore, we can extract an information in this graph that it shows a trend that `the less time a recipe takes, it has higher possibility of getting higher rating`. We will explore this trend in later parts.
 
----
 
 2. Here, we present the scatter plot of timing vs. rating of recipes that takes *more than 180 minutes to work on*:
 <iframe src="assets/minutes_greater_than_180_vs._avg_rating.html" width=800 height=600 frameBorder=0></iframe>
