@@ -52,14 +52,12 @@ First of all, for the only missing value in the name column, we conclude it as M
 
 ### Missingness Dependency
 
-In our analysis, we tried to explore whether the missingness of the *rating* column depends on *the number of steps*
+1. In our analysis, we tried to explore whether the missingness of the *rating* column depends on *the number of steps*
 
-Null hypothesis:
+    Null hypothesis:
+        The observed difference of means among recipes that have ratings and recipes that do not have ratings is because of random chance.
 
-The observed difference of means among recipes that have ratings and recipes that do not have ratings is because of random chance.
+    Alternative hypothesis:
+        The observed difference is not due to random chance of those two groups.
 
-Alternative hypothesis:
-
-The observed difference is not due to random chance of those two groups.
-
-The significance level is at 5%
+    The significance level is at 5%
