@@ -83,7 +83,14 @@ In the graph of recipes that takes more than 180 minutes(3 hours), we can still 
 ---
 ### Interesting Aggregate
 
-'|   1.0 |   2.0 |   3.0 |   4.0 |    5.0 |\n|------:|------:|------:|------:|-------:|\n|  2548 |  2119 |  6549 | 34575 | 158181 |\n|   293 |   218 |   565 |  2466 |   9901 |\n|     6 |     7 |    23 |   101 |    490 |\n|    22 |    23 |    32 |   147 |    928 |\n|     0 |     1 |     2 |     6 |     36 |\n|     1 |     0 |     1 |    12 |    137 |'
+|   1.0 |   2.0 |   3.0 |   4.0 |    5.0 |
+|------:|------:|------:|------:|-------:|
+|  2548 |  2119 |  6549 | 34575 | 158181 |
+|   293 |   218 |   565 |  2466 |   9901 |
+|     6 |     7 |    23 |   101 |    490 |
+|    22 |    23 |    32 |   147 |    928 |
+|     0 |     1 |     2 |     6 |     36 |
+|     1 |     0 |     1 |    12 |    137 |
 
  - As shown in the above pivot table, we used the merged dataframe, which has the information of the number of ratings in each recipes. By separating these recipes according to their minutes used, we are able to observe that most people would actually try or make ratings on recipes that take relatively shorter time as compared to recipes that take longer time. Starting from here, we would want to observe that whether there is a relationship among minutes and rating columns in our dataset.
 
