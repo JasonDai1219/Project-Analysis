@@ -61,3 +61,6 @@ First of all, for the only missing value in the name column, we conclude it as M
         The observed difference is not due to random chance of those two groups.
 
     - The significance level is at 5%
+    - The 
+    - Accoridng to the permutation test we made, the p-value is 0.0, which is much smaller than our significant level, thus we reject the null hypothesis. And here is the graph showing where the observation lies in the distribution of the difference between *mean* of *the number of steps* when *rating* is missing and when *rating* is not missing.
+    <iframe src="assets/n_steps_by_missingness_of_ratings.html" width=800 height=600 frameBorder=0></iframe>
