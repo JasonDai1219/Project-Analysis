@@ -37,3 +37,29 @@ In the graph of recipes that takes more than 180 minutes(3 hours), we can still 
 
 ---
 ## Interesting Aggregate
+
+`print(interesting_aggregates.to_markdown(index = False))`
+
+As shown in the above pivot table, we used the merged dataframe, which has the information of the number of ratings in each recipes. By separating these recipes according to their minutes used, we are able to observe that most people would actually try or make ratings on recipes that take relatively shorter time as compared to recipes that take longer time. Starting from here, we would want to observe that whether there is a relationship among minutes and rating columns in our dataset.
+
+---
+## Assessment of Missingness
+
+### NMAR Analysis
+First of all, for the only missing value in the name column, we conclude it as Missing Completely At Random (MCAR). Since all the values in recipe_id, minutes, contributor_id, and submitted are filled, the probability of a missing name is unrelated to any other columns, and also it is unlikely that the name is missing because of some properties of itself. Moreover, the missingness of avg_rating relates to the missingness of the rating column, so it is Missing At Random(MAR), and not NMAR. Thus, through observing the missingness of the rating column, as permutation test shown in the later part, the missingess of the rating column has a relationship with the n_step column, so we also conclude that the missingness of rating column is also MAR, not NMAR. All in all, we do not observe NMAR missingness in our dataset's three columns that has missing values.
+
+---
+
+### Missingness Dependency
+
+In our analysis, we tried to explore whether the missingness of the *rating* column depends on *the number of steps*
+
+Null hypothesis:
+
+The observed difference of means among recipes that have ratings and recipes that do not have ratings is because of random chance.
+
+Alternative hypothesis:
+
+The observed difference is not due to random chance of those two groups.
+
+The significance level is at 5%
