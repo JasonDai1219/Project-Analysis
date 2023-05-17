@@ -30,11 +30,23 @@ Then we add an additional column of the average rating `avg_rating` of each reci
 
 
 Finally, we clean the `interactions` dataset by dropping the `review` column, which we will not focus on. 
-`print(interactions_new.to_markdown(index = False))`
+|    user_id |   recipe_id | date       |   rating |
+|-----------:|------------:|:-----------|---------:|
+|    1293707 |       40893 | 2011-12-21 |        5 |
+|     126440 |       85009 | 2010-02-27 |        5 |
+|      57222 |       85009 | 2011-10-01 |        5 |
+|     124416 |      120345 | 2011-08-06 |      nan |
+| 2000192946 |      120345 | 2015-05-10 |        2 |
 
 
 We also keep the columns we are using, whcih are `name`,`recipe_id`,`minutes`,`contributor_id`,`submitted`, and `avg_rating`, in the rest of our analysis in the `recipes` dataset, and add the `avg_rating` column to it for our future analysis on the relationship between the cooking time and average rating of recipes.
-`print(recipes_new.to_markdown(index = False))`
+| name                                 |   recipe_id |   minutes |   contributor_id | submitted   |   avg_rating |
+|:-------------------------------------|------------:|----------:|-----------------:|:------------|-------------:|
+| 1 brownies in the world    best ever |      333281 |        40 |           985201 | 2008-10-27  |            4 |
+| 1 in canada chocolate chip cookies   |      453467 |        45 |          1848091 | 2011-04-11  |            5 |
+| 412 broccoli casserole               |      306168 |        40 |            50969 | 2008-05-30  |            5 |
+| millionaire pound cake               |      286009 |       120 |           461724 | 2008-02-12  |            5 |
+| 2000 meatloaf                        |      475785 |        90 |          2202916 | 2012-03-06  |            5 |
 
 ---
 
