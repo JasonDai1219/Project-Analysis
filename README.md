@@ -138,7 +138,7 @@ First of all, for the only missing value in the name column, we conclude it as M
     <iframe src="assets/has_wheat_and_rating_missingness.html" width=800 height=600 frameBorder=0></iframe>
     - `Analysis Process`: as we think the missingness of the `rating` column, which has a proportion around `0.064135` missing, may relates to whether it has `wheat` in its `ingredients` or not. Thus we performed a permutation test again to investigate this question.
     - Moreover, we have the empirical distribution of our permutation test, and we can see that the observation lies in the position that is close to the middle, which supports out assertion that we fail to reject the null hypothesis.
-    <iframe src="assets/raing_vs._has_wheat1.html" width=800 height=600 frameBorder=0></iframe>
+    <iframe src="assets/rating_vs._has_wheat1.html" width=800 height=600 frameBorder=0></iframe>
 
     - `Result`: according to our permutation test, the p-value is `0.301`, which is greater than our significance level: `0.05`, thus we fail to reject the null hypothesis.
 
