@@ -1,6 +1,16 @@
 # Project-Analysis
 This is a project of DSC 80 at University of California San Diego
 
+---
+## Introduction
+
+The file `food_data/RAW_interactions.csv` contains information on the ratings and reviews commented by different users based on the recipe they followed:
+
+The file `food_data/RAW_recipes.csv` contains information on the details such as the work time, nutrition, and number of steps of each recipe:
+
+In this project, we focus on finding the relationship between the cooking time and average rating of recipes, which will provide more personalized suggestions to people while they are finding suitable recipes. The users will be able to make more informed choices on the recipes they prefer and the expected time they need to spend.
+There are 731927 rows in the `interactions` dataset, and we will focus on the 
+`user_id`, `recipe_id`, `date`, `rating` columns. At the same time, there are 83782 rows in the `recipes` dataset, and we will focus on the `name`, `id`, `minutes`, `contributor_id`, `submitted` columns.
 
 ---
 
