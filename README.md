@@ -13,8 +13,26 @@ There are 731927 rows in the `interactions` dataset, and we will focus on the
 `user_id`, `recipe_id`, `date`, `rating` columns. At the same time, there are 83782 rows in the `recipes` dataset, and we will focus on the `name`, `id`, `minutes`, `contributor_id`, `submitted` columns.
 
 ---
+## Cleaning and EDA (Exploratory Data Analysis)
 
-## Univariate Analysis
+### Data Cleaning
+
+First, we left merge the `recipes` and `interactions` datasets together to clean the data as the analysis would be easier to conduct and understand if the cooking time and ratings are on the same dataset. We fill all the ratings of 0 with `np.nan` since the rating should be in the range of 1 to 5 (inclusive), and a 0 means the user did not fill out the rate.
+
+Then we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataset by grouping it by the `recipe_id`.
+`print(merged.head().to_markdown(index = False))`
+
+
+Finally, we clean the `interactions` dataset by dropping the `review` column, which we will not focus on. 
+`print(interactions_new.to_markdown(index = False))`
+
+
+We also keep the columns we are using, whcih are `name`,`recipe_id`,`minutes`,`contributor_id`,`submitted`, and `avg_rating`, in the rest of our analysis in the `recipes` dataset, and add the `avg_rating` column to it for our future analysis on the relationship between the cooking time and average rating of recipes.
+`print(recipes_new.to_markdown(index = False))`
+
+---
+
+### Univariate Analysis
 
 1. Here is the distribution of minutes(excluded extreme outliers) in our adjusted recipes dtataset: *recipes_new*
 <iframe src="assets/minutes_distribution.html" width=800 height=600 frameBorder=0></iframe>
@@ -31,7 +49,7 @@ Later on, we will explore this question, and now, let us take a look at bivariat
 
 ---
 
-## Bivariate Analysis
+### Bivariate Analysis
 
 1. Here, we present the scatter plot of timing vs. rating of recipes that takes *less than 180 minutes to work on*:
 <iframe src="assets/minutes_less_than_180_vs._avg_rating.html" width=800 height=600 frameBorder=0></iframe>
@@ -46,7 +64,7 @@ In the first look of this scatter plot, you may think that it is kind of strange
 In the graph of recipes that takes more than 180 minutes(3 hours), we can still see the pattern that more 5 ratings are those recipes that has less time, however, since there are not many recipes that takes time longer than 3 hours, so our analysis would not focus on these recipes.
 
 ---
-## Interesting Aggregate
+### Interesting Aggregate
 
 `print(interesting_aggregates.head().to_markdown(index = False))`
 
