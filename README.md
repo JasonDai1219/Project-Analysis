@@ -113,3 +113,17 @@ First of all, for the only missing value in the name column, we conclude it as M
 
 ---
 
+## Hypothesis Testing
+
+Our null hypothesis is 
+> There is no significant relationship between cooking time and average rating of recipes.
+
+The alternative hypothesis is 
+> There is a significant relationship between cooking time and average rating of recipes. The less cooking time (less than 180 min) required, the higher the rating is.
+
+Since the typical preparation of a meal would be under 3 hours, we divide the dataset into two groups, which are the recipes with cooking time more than or equal to 180 min and those are less than 180 min. The test statistics chosen is the difference between the means of the ratings of the two groups. We will conduct the permutation test under the significance level of 5%. 
+
+The resulting p-value is 0.0, which is lower than 0.05. Therefore, we reject the null hypothesis.
+
+---
+
