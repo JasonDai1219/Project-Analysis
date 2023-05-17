@@ -80,7 +80,7 @@ In the first look of this scatter plot, you may think that it is kind of strange
 - Here, we present the scatter plot of timing vs. rating of recipes that takes *more than 180 minutes to work on*:
 <iframe src="assets/minutes_greater_than_180_vs._avg_rating.html" width=800 height=600 frameBorder=0></iframe>
 
-In the graph of recipes that takes more than 180 minutes(3 hours), we can still see the pattern that more 5 ratings are those recipes that has less time, however, since there are not many recipes that takes time longer than 3 hours, so our analysis would not focus on these recipes.
+In the graph of recipes that takes more than 180 minutes(3 hours), we can still see the pattern that more 5 ratings are those recipes that takes less time, however, since there are not many recipes that takes time longer than 3 hours, so our analysis would not focus on these recipes.
 
 ---
 ### Interesting Aggregate
