@@ -17,7 +17,7 @@ There are `731927 rows` in the `interactions` dataset, and we will focus on the
 
 ### Data Cleaning
 
-First, we left merge the `recipes` and `interactions` datasets together to clean the data as the analysis would be easier to conduct and understand if the cooking time and ratings are on the same dataset. We fill all the ratings of 0 with `np.nan` since the rating should be in the range of 1 to 5 (inclusive), and a 0 means the user did not fill out the rate.
+First, we left merge the `recipes` and `interactions` datasets together on `recipe_id` to clean the data as the analysis would be easier to conduct and understand if the cooking time and ratings are on the same dataset. We fill all the ratings of 0 with `np.nan` since the rating should be in the range of 1 to 5 (inclusive), and a 0 means the user did not fill out the rate.
 
 Then we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataset by grouping it by the `recipe_id`.
 
@@ -41,7 +41,7 @@ Finally, we clean the `interactions` dataset by dropping the `review` column, wh
 | 2000192946 |      120345 | 2015-05-10 |        2 |
 
 
-We also keep the columns we are using, whcih are `name`,`recipe_id`,`minutes`,`contributor_id`,`submitted`, and `avg_rating`, in the rest of our analysis in the `recipes` dataset, and add the `avg_rating` column to it for our future analysis on the relationship between the cooking time and average rating of recipes.
+We also keep the columns we are using, which are `name`,`recipe_id`,`minutes`,`contributor_id`,`submitted`, and `avg_rating`, in the rest of our analysis in the `recipes` dataset, and add the `avg_rating` column to it for our future analysis on the relationship between the cooking time and average rating of recipes.
 
 | name                                 |   recipe_id |   minutes |   contributor_id | submitted   |   avg_rating |
 |:-------------------------------------|------------:|----------:|-----------------:|:------------|-------------:|
