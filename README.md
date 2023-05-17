@@ -146,15 +146,20 @@ First of all, for the only missing value in the name column, we conclude it as M
 
 ## Hypothesis Testing
 
-Our null hypothesis is 
+Our `null hypothesis` is 
 > There is no significant relationship between cooking time and average rating of recipes.
 
-The alternative hypothesis is 
+The `alternative hypothesis` is 
 > There is a significant relationship between cooking time and average rating of recipes. The less cooking time (less than 180 min) required, the higher the rating is.
 
-Since the typical preparation of a meal would be under 3 hours, we divide the dataset into two groups, which are the recipes with cooking time more than or equal to 180 min and those are less than 180 min. The test statistics chosen is the difference between the means of the ratings of the two groups. We will conduct the permutation test under the significance level of 5%. 
+> Justification on choices of `null and alternative hypothesis`: in our earlier observation, we see that there seems to exist a relationship among `minutes` a recipes requires , and `rating` the recipe has. Here, we use these hypothesis to investigate that question.
 
-The resulting p-value is 0.0, which is lower than 0.05. Therefore, we reject the null hypothesis.
+Since the typical preparation of a meal would be under 3 hours, we divide the dataset into two groups, which are the recipes with cooking time more than or equal to 180 min and those are less than 180 min. The `test statistics` chosen is the difference between the means of the ratings of the two groups. We will conduct the permutation test under the `significance level` of 5%.
+> Justification on test statistic's choice: we use the difference among means of ratings of group of recipes that takes less than 3 hours(180 minutes) and that which takes more than 3 hours(180 minutes), since we are investigating numerical values.
+
+> Justification on significance level: we think 0.05 is strong enough in our analysis.
+
+The resulting `p-value` is 0.0, which is lower than 0.05. Therefore, we reject the null hypothesis.
 
 ---
 
