@@ -120,7 +120,7 @@ First of all, for the only missing value in the name column, we conclude it as M
     - Here is the graph showing where the observation lies in the distribution of  *the number of steps* when *rating* is missing and when *rating* is not missing.
     <iframe src="assets/n_steps_by_missingness_of_ratings.html" width=800 height=600 frameBorder=0></iframe>
         - As we can see in the above graph, the distribution of step numbers when rating is missing has a bimodal distribution and more outliers, which is different from that of the distribution of *step numbers* when rating is not missing. However, we think that the most appropriate test statistic in this situation is the `Kolmogorov-Smirnov` test statistic. Since without looking `in such a detailed scope` we may say that these two distribution looks similar, but if we compare the `cdf`s of these two distribution, we would realize that the difference is apparent.
-    - And here, we have the empirical dustribution of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, therefore, we should reject the null hypothesis of this permutation test.
+    - And here, we have the empirical dustribution of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, therefore, that implies that we should reject the null hypothesis of this permutation test.
     <iframe src="assets/rating_vs._nsteps.html" width=800 height=600 frameBorder=0></iframe>
 
 2. In our analysis, we also tried to explore whether the missingness of the *rating* column depends on the recipe has `wheat` in its *ingredients* or not.
