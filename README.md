@@ -72,9 +72,10 @@ First of all, for the only missing value in the name column, we conclude it as M
 
     - The significance level is at 5%
     - The 
-    - Accoridng to the permutation test we made, the p-value is 0.0, which is much smaller than our significant level, thus we reject the null hypothesis. And here is the graph showing where the observation lies in the distribution of  *the number of steps* when *rating* is missing and when *rating* is not missing.
+    - Accoridng to the permutation test we made, the p-value is `0.0`, which is much smaller than our significant level, thus we reject the null hypothesis. 
+    - Here is the graph showing where the observation lies in the distribution of  *the number of steps* when *rating* is missing and when *rating* is not missing.
     <iframe src="assets/n_steps_by_missingness_of_ratings.html" width=800 height=600 frameBorder=0></iframe>
-    - As we can see in the above graph, the distribution of step numbers when rating is missing has a bimodal distribution and more outliers, which is different from that of the distribution of *step numbers* when rating is not missing.
+        - As we can see in the above graph, the distribution of step numbers when rating is missing has a bimodal distribution and more outliers, which is different from that of the distribution of *step numbers* when rating is not missing.
     - And here, we have the empirical dustribution of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, therefore, we should reject the null hypothesis of this permutation test.
     <iframe src="assets/rating_vs._nsteps.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -83,3 +84,9 @@ First of all, for the only missing value in the name column, we conclude it as M
         - The missingness of rating of recipes has no relationship with whether a recipe's ingredients has wheat.
     - Alternative hypothesis:
         - There is a relationship among the missingness of rating and whether a recipe's ingredients has wheat.
+    - The significance level is at 5%
+    - According to our permutation test, the p-value is `0.301`, which is greater than our significance level: `0.05`, thus we fail to reject the null hypothesis.
+    - Here is the graph showing the number of recipes have `wheat` in their `ingredients`, and that of recipes do not have `wheat` in their ingredients. And we can see that there is no apparent differences among groups that have `wheat` in their `ingredients, and groups that does not have `wheat` in their `ingredients`.
+    <iframe src="assets/has_wheat_and_rating_missingness.html" width=800 height=600 frameBorder=0></iframe>
+    - Moreover, we have the empirical distribution of our permutation test, and we can see that the observation lies in the position that is close to the middle, which supports out assertion that we fail to reject the null hypothesis.
+    <iframe src="assets/rating_vs._has_wheat.html" width=800 height=600 frameBorder=0></iframe>
