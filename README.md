@@ -123,7 +123,7 @@ First of all, for the only missing value in the name column, we conclude it as M
     - As we can see in the above graph, the distribution of step numbers when rating is missing has a `bimodal` distribution, which is different from that of the distribution of *step numbers* when rating is not missing. Thus, we think an appropriate test statistic in this situation is the `Kolmogorov-Smirnov` test statistic. Since without looking `in such a detailed scope` we may say that these two distribution looks similar, but if we compare the `cdf`s of these two distribution, we would realize that the difference is apparent.
     - `Analysis process`: we think the missingness of the `rating` column may depends on `the number of steps` a recipe requires, as there are a proportion around `0.064135` of datas in the `rating` column are missing. Therefore, we would like to make a permutation test to see if the missingnes of `rating` of a recipe actually depends on how many `steps` it has.
     - And here, we have the empirical dustribution of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, therefore, that implies that we should reject the null hypothesis of this permutation test.
-    <iframe src="assets/rating_vs._nsteps.html" width=800 height=600 frameBorder=0></iframe>
+    <iframe src="assets/rating_vs._nsteps1.html" width=800 height=600 frameBorder=0></iframe>
 
     - `Result`: accoridng to the permutation test we made, the p-value is `0.0`, which is much smaller than our significant level, thus we reject the null hypothesis. 
 
@@ -138,7 +138,7 @@ First of all, for the only missing value in the name column, we conclude it as M
     <iframe src="assets/has_wheat_and_rating_missingness.html" width=800 height=600 frameBorder=0></iframe>
     - `Analysis Process`: as we think the missingness of the `rating` column, which has a proportion around `0.064135` missing, may relates to whether it has `wheat` in its `ingredients` or not. Thus we performed a permutation test again to investigate this question.
     - Moreover, we have the empirical distribution of our permutation test, and we can see that the observation lies in the position that is close to the middle, which supports out assertion that we fail to reject the null hypothesis.
-    <iframe src="assets/raing_vs._has_wheat.html" width=800 height=600 frameBorder=0></iframe>
+    <iframe src="assets/raing_vs._has_wheat1.html" width=800 height=600 frameBorder=0></iframe>
 
     - `Result`: according to our permutation test, the p-value is `0.301`, which is greater than our significance level: `0.05`, thus we fail to reject the null hypothesis.
 
