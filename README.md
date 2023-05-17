@@ -94,7 +94,7 @@ In the graph of recipes that takes more than 180 minutes(3 hours), we can still 
 | 10081 - 20160    |     0 |     1 |     2 |     6 |     36 |
 | 20160 -          |     1 |     0 |     1 |    12 |    137 |
 
- - As shown in the above pivot table, we used the merged dataframe, which has the information of the number of ratings in each recipes. By separating these recipes according to their minutes used, we are able to observe that most people would actually try or make ratings on recipes that take relatively shorter time as compared to recipes that take longer time. Starting from here, we would want to observe that whether there is a relationship among minutes and rating columns in our dataset.
+ - As shown in the above pivot table, we used the merged dataframe, which has the information of the number of ratings in each recipes. By separating these recipes according to their minutes used, we are able to observe that most people would actually try or make ratings on recipes that take relatively shorter time as compared to recipes that take longer time. Starting from here, we would want to observe that whether there is a relationship among `minutes` and `avg_rating` columns in our dataset.
 
 ---
 ## Assessment of Missingness
