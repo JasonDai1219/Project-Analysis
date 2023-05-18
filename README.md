@@ -21,13 +21,13 @@ First, we left merge the `recipes` and `interactions` datasets together on `reci
 
 Then we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataset by grouping it by the `recipe_id`.
 
-| name                               | recipe_id | minutes | contributor_id |  submitted | avg_rating |    user_id | recipe_id |       date | rating |
-|:-----------------------------------|----------:|--------:|---------------:|:-----------|-----------:|-----------:|----------:|:-----------|-------:|
-| 1 brownies in the world best ever  |    333281 |      40 |         985201 | 2008-10-27 |          4 |      386585|    333281 | 2008-11-19 |      4 |
-| 1 in canada chocolate chip cookies |    453467 |      45 |        1848091 | 2011-04-11 |          5 |      424680|    453467 | 2012-01-26 |      5 |
-| 412 broccoli casserole             |    306168 |      40 |          50969 | 2008-05-30 |          5 |       29782|    306168 | 2008-12-31 |      5 |
-| 412 broccoli casserole             |    306168 |      40 |          50969 | 2008-05-30 |          5 | 1.19628e+06|    306168 | 2009-04-13 |      5 |
-| 412 broccoli casserole             |    306168 |      40 |          50969 | 2008-05-30 |          5 |      768828|    306168 | 2013-08-02 |      5 |
+| name                               |   recipe_id |   minutes |   contributor_id |    submitted |   avg_rating |       user_id |   recipe_id |         date |   rating |
+|:-----------------------------------|------------:|----------:|-----------------:|:-------------|-------------:|--------------:|------------:|:-------------|---------:|
+| 1 brownies in the world best ever  |      333281 |        40 |           985201 |   2008-10-27 |            4 |        386585 |      333281 |   2008-11-19 |        4 |
+| 1 in canada chocolate chip cookies |      453467 |        45 |          1848091 |   2011-04-11 |            5 |        424680 |      453467 |   2012-01-26 |        5 |
+| 412 broccoli casserole             |      306168 |        40 |            50969 |   2008-05-30 |            5 |         29782 |      306168 |   2008-12-31 |        5 |
+| 412 broccoli casserole             |      306168 |        40 |            50969 |   2008-05-30 |            5 |   1.19628e+06 |      306168 |   2009-04-13 |        5 |
+| 412 broccoli casserole             |      306168 |        40 |            50969 |   2008-05-30 |            5 |        768828 |      306168 |   2013-08-02 |        5 |
 
 
 Finally, we clean the `interactions` dataset by dropping the `review` column, which we will not focus on. 
