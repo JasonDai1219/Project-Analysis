@@ -116,7 +116,6 @@ First of all, for the only missing value in the `name` column, we conclude it as
 Moreover, the missingness of `avg_rating` relates to the missingness of the `rating` column, so it is **Missing At Random(MAR)**, not NMAR. Thus, through observing the missingness of the `rating` column, as permutation test shown in the later part, the missingess of the `rating` column has a relationship with the `n_step` column, so we also conclude that the missingness of `rating` column is also **MAR**, not NMAR. All in all, we do not observe NMAR missingness in our dataset's three columns that has missing values.
 
 ---
-
 ### Missingness Dependency
 
 - We see that the 'rating` column is the one that has most missing values, therefore, we would like to investigate on the missingness of that column.
@@ -168,7 +167,6 @@ Moreover, the missingness of `avg_rating` relates to the missingness of the `rat
         According to our permutation test, the **p-value** is **0.301**, which is **greater** than our significance level of **0.05**. Thus, we **fail to reject** the null hypothesis.
 
 ---
-
 ## Hypothesis Testing
 
 So far, we have analyzed the information contained in the dataset, and we are finally getting back to our central question: \
