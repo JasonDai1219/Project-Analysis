@@ -194,7 +194,7 @@ Since the typical preparation of a meal would be under 3 hours, we divide the da
     We think 0.05 is strong enough in our analysis.
 
 Here, we have the **empirical distribution** of our permutation test, and we can see that the **observation** lies almost **outside** the whole empirical distribution, which implies that we should **reject** the null hypothesis of this permutation test.
-    <iframe src="assets/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
 
 The resulting **p-value** is **0.0**, which is significantly **lower** than 0.05. Therefore, we **reject** the null hypothesis.
