@@ -171,20 +171,29 @@ Moreover, the missingness of `avg_rating` relates to the missingness of the `rat
 
 ## Hypothesis Testing
 
+So far, we have analyzed the information contained in the dataset, and we are finally getting back to our central question: \
+**What is the relationship between the cooking time and average rating of recipes?**
+We will conduct a **permutation test** to explore.
+
 Our `null hypothesis` is 
 > There is no significant relationship between cooking time and average rating of recipes.
 
 The `alternative hypothesis` is 
 > There is a significant relationship between cooking time and average rating of recipes. The less cooking time (less than 180 min) required, the higher the rating is.
 
-> Justification on choices of `null and alternative hypothesis`: in our earlier observation, we see that there seems to exist a relationship among `minutes` a recipes requires , and `rating` the recipe has. Here, we use these hypothesis to investigate that question.
+- Justification on choices of **null** and **alternative** hypothesis: 
+    In our earlier observation, we see that there seems to exist a relationship among `minutes` a recipes requires , and `rating` the recipe has. Here, we use these hypotheses to investigate.
+
 
 Since the typical preparation of a meal would be under 3 hours, we divide the dataset into two groups, which are the recipes with cooking time more than or equal to 180 min and those are less than 180 min. The `test statistics` chosen is the difference between the means of the ratings of the two groups. We will conduct the permutation test under the `significance level` of 5%.
-> Justification on test statistic's choice: we use the difference among means of ratings of group of recipes that takes less than 3 hours(180 minutes) and that which takes more than 3 hours(180 minutes), since we are investigating numerical values.
 
-> Justification on significance level: we think 0.05 is strong enough in our analysis.
+- Justification on the choice of the **test statistic**: 
+    Since we are investigating numerical values, we use the difference between the means of ratings of the group of recipes that take less than 3 hours (180 minutes) and those take more than 3 hours (180 minutes).
 
-The resulting `p-value` is 0.0, which is lower than 0.05. Therefore, we reject the null hypothesis.
+- Justification on **significance level**:
+    We think 0.05 is strong enough in our analysis.
+
+The resulting **p-value** is **0.0**, which is significantly **lower** than 0.05. Therefore, we reject the null hypothesis.
 
 ---
 
