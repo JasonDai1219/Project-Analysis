@@ -17,8 +17,7 @@ There are **731927 rows** in the `interactions` dataset, and we will focus on th
 ### Data Cleaning
 
 - First, we left merge the `recipes` and `interactions` datasets together on `recipe_id` to clean the data as the analysis would be easier to conduct and understand if the cooking time and ratings are on the same dataset. We fill all the ratings of 0 with `np.nan` since the rating should be in the range of 1 to 5 (inclusive), and a 0 means the user did not fill out the rate.
-
-Then we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataset by grouping it by the `recipe_id`. The head of the `merged` dataframe is shown below:
+- Then we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataset by grouping it by the `recipe_id`. The head of the `merged` dataframe is shown below:
 
 | name                               |   recipe_id |   minutes |   contributor_id |    submitted |   avg_rating |       user_id |   recipe_id |         date |   rating |
 |:----------------------------------:|------------:|----------:|-----------------:|-------------:|-------------:|--------------:|------------:|-------------:|---------:|
