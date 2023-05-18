@@ -63,17 +63,17 @@ At the same time, there are **83782 rows** in the `recipes` dataset, and we will
 
 ### Univariate Analysis
 
-- Here is the distribution of minutes(excluded extreme outliers) in our adjusted recipes dtataset: *recipes_new*
+- Here is the distribution of `minutes` (excluded extreme outliers) in our adjusted recipes dataset `recipes_new`:
 <iframe src="assets/minutes_distribution.html" width=800 height=600 frameBorder=0></iframe>
 
-- As we can see most recipes takes less than 3 hours(180 minutes) to make. Moreover, we excluded some extremely large outliers that could potentially make our estimation biasedly high, and there are only a few of them, thus, excluding those values would not introduce significant influence to our analysis.
+-- As we can see **most** recipes takes less than 3 hours (180 minutes) to complete. Moreover, we excluded some extremely large outliers that could potentially make our estimation biasedly high. Since there are only **a few** of them, excluding those values would not introduce significant influence to our analysis.
 
 
-- Here is the distribution of ratings, in our adjusted interactions dataset: *interactions_new*:
+- Here is the distribution of `ratings`, in our adjusted interactions dataset `interactions_new`:
 <iframe src="assets/ratings_distribution.html" width=800 height=600 frameBorder=0></iframe>
 
- - In this distribution of ratings across various recipes, we can observe that most recipes have the highest rating score, 5. Then we may wonder that is there a relationship among the timing of a recipe and the rating of a recipe?
-Later on, we will explore this question, and now, let us take a look at bivariate analysis of our dataset.
+-- In this distribution of ratings across various recipes, we can observe that **most** recipes have the **highest rating score, 5**, which inspired us to explore  that whether there is a relationship between the timing and the rating of the recipe.
+Later on, we will study on this question. Now, let us take a look at bivariate analysis of our dataset.
 
 ---
 
