@@ -26,8 +26,8 @@ At the same time, there are **83782 rows** in the `recipes` dataset, and we will
 
 ### Data Cleaning
 
-- First, we left merge the `recipes` and `interactions` datasets together on `recipe_id` to clean the data as the analysis would be easier to conduct and understand if the cooking time and ratings are on the same dataset. We fill all the ratings of 0 with `np.nan` since the rating should be in the range of 1 to 5 (inclusive), and a 0 means the user did not fill out the rate.
-- Then we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataset by grouping it by the `recipe_id`. The head of the `merged` dataframe is shown below:
+- First, we left merge the `recipes` and `interactions` datasets together on `recipe_id` to clean the data because the analysis would be easier to conduct and understand if the **cooking time** and **ratings** are on the **same** dataframe. We fill all the ratings of 0 with `np.nan` since the rating should be in the range of 1 to 5 (inclusive), and a 0 means the user did not fill out the rate.
+- Then, we add an additional column of the average rating `avg_rating` of each recipe on the `merged` dataframe by grouping it by the `recipe_id` and drop the unrelated columns. The head of the `merged` dataframe is shown below:
 
 | name                               |   recipe_id |   minutes |   contributor_id |    submitted |   avg_rating |       user_id |   recipe_id |         date |   rating |
 |:----------------------------------:|------------:|----------:|-----------------:|-------------:|-------------:|--------------:|------------:|-------------:|---------:|
@@ -49,7 +49,7 @@ At the same time, there are **83782 rows** in the `recipes` dataset, and we will
 | 2000192946 |      120345 |   2015-05-10 |        2 |
 
 
-- We also keep the columns we are using, which are `name`, `recipe_id`, `minutes`, `contributor_id`, `submitted`, and `avg_rating`, in the rest of our analysis in the `recipes` dataset, and add the `avg_rating` column to it for our future analysis on the relationship between the cooking time and average rating of recipes. The head of the cleaned `recipes` dataframe is shown below:
+- We also keep the columns we are using, which are `name`, `recipe_id`, `minutes`, `contributor_id`, `submitted`, and `avg_rating`, in the rest of our analysis in the `recipes` dataset and add the `avg_rating` column to it for our future analysis on the relationship between the cooking time and average rating of recipes. The head of the cleaned `recipes` dataframe is shown below:
 
 | name                               |   recipe_id |   minutes |   contributor_id |   submitted | avg_rating |
 |:----------------------------------:|------------:|----------:|-----------------:|------------:|-----------:|
