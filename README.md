@@ -9,7 +9,10 @@ The raw dataset `RAW_interactions.csv` contains information on the ratings and r
 In this project, we focus on finding **the relationship between the cooking time and average rating of recipes**, which will provide more **personalized suggestions** to people while they are finding suitable recipes. The users will be able to make more informed choices on the recipes they prefer and the expected time they need to spend. Moreover, this is also helpful to recipe makers who will gain a more **comprehensive understanding** of which type of recipes is able to provide them high ratings and popularity.
 
 There are **731927 rows** in the `interactions` dataset, and we will focus on the 
-`user_id` : the user ID on the website, `recipe_id` : the ID of the recipe, `date` : the date of the interaction, `rating` : the rating given on the recipe columns. At the same time, there are **83782 rows** in the `recipes` dataset, and we will focus on the `name` : the name of the recipe, `id` : the id of the recipe, `minutes` : how long does it take to work on the recipe, `contributor_id` : the ID of the user who submitted the recipe, `submitted` : the date when the recipe was submitted columns.
+> `user_id` : the user ID on the website, `recipe_id` : the ID of the recipe, `date` : the date of the interaction, `rating` : the rating given on the recipe columns. 
+
+At the same time, there are **83782 rows** in the `recipes` dataset, and we will focus on the 
+> `name` : the name of the recipe, `id` : the id of the recipe, `minutes` : how long does it take to work on the recipe, `contributor_id` : the ID of the user who submitted the recipe, `submitted` : the date when the recipe was submitted columns.
 
 ---
 ## Cleaning and EDA (Exploratory Data Analysis)
