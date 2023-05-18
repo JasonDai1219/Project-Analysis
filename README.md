@@ -193,7 +193,9 @@ Since the typical preparation of a meal would be under 3 hours, we divide the da
 - Justification on **significance level**:
     We think 0.05 is strong enough in our analysis.
 
-The resulting **p-value** is **0.0**, which is significantly **lower** than 0.05. Therefore, we reject the null hypothesis.
+The resulting **p-value** is **0.0**, which is significantly **lower** than 0.05. Therefore, we **reject** the null hypothesis.
+
+In conclusion, based on the statistical analysis performed, we reject the null hypothesis and find that there **is a significant relationship** between **cooking time** and the **average rating** of recipes. The data suggests that cooking time has a notable impact on the rating of recipes. However, it is important to acknowledge that the significant association **does not** imply a definitive **cause-and-effect** relationship between **cooking time** and recipe **ratings**.
 
 ---
 
