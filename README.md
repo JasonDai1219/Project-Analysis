@@ -139,26 +139,33 @@ Moreover, the missingness of `avg_rating` relates to the missingness of the `rat
     - Analysis process: \
         The missingness of the `rating` column may depend on `n_steps` a recipe requires. As there are a proportion around **0.064135** of data in the `rating` column are missing, we would like to make a **permutation test** to see if the missingness of the `rating` of a recipe actually depends on how many steps it has.
 
-        Here, we have the **empirical distribution** of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, which implies that we should **reject** the null hypothesis of this permutation test.
+        Here, we have the **empirical distribution** of our permutation test, and we can see that the **observation** lies almost **outside** the whole empirical distribution, which implies that we should **reject** the null hypothesis of this permutation test.
     <iframe src="assets/rating_vs._nsteps1.html" width=800 height=600 frameBorder=0></iframe>
 
     - Result: \
-        Accoridng to the permutation test we conducted, the **p-value** is **0.0**, which is much smaller than our significant level of **0.05**. Thus, we **reject** the null hypothesis. 
+        Accoridng to the permutation test we conducted, the **p-value** is **0.0**, which is much **smaller** than our significant level of **0.05**. Thus, we **reject** the null hypothesis. 
 
-2. In our analysis, we also tried to explore whether the missingness of the *rating* column depends on the recipe has `wheat` in its *ingredients* or not.
-    - Null hypothesis:
-        - The missingness of rating of recipes has no relationship with whether a recipe's ingredients has wheat.
-    - Alternative hypothesis:
-        - There is a relationship among the missingness of rating and whether a recipe's ingredients has wheat.
-    - The significance level is at 5%
+2. In our analysis, we also tried to explore whether the missingness of the `rating` column depends on the recipe has *wheat* in its `ingredients` or not.
 
-    - Here is the graph showing the number of recipes have `wheat` in their `ingredients`, and that of recipes do not have `wheat` in their ingredients. And we can see that there is no apparent differences among groups that have `wheat` in their `ingredients, and groups that does not have `wheat` in their `ingredients`.
+    Null hypothesis:
+    > The missingness of rating of recipes has no relationship with whether a recipe's ingredients has wheat.
+
+    Alternative hypothesis:
+    > There is a relationship among the missingness of rating and whether a recipe's ingredients has wheat.
+
+    - The significance level is at 5%.
+
+    Here is the graph showing the number of recipes have *wheat* in their `ingredients`, and that of recipes do not have *wheat* in their `ingredients`. We can see that there is **no apparent differences** among the two groups.
     <iframe src="assets/has_wheat_and_rating_missingness.html" width=800 height=600 frameBorder=0></iframe>
-    - `Analysis Process`: as we think the missingness of the `rating` column, which has a proportion around `0.064135` missing, may relates to whether it has `wheat` in its `ingredients` or not. Thus we performed a permutation test again to investigate this question.
-    - Moreover, we have the empirical distribution of our permutation test, and we can see that the observation lies in the position that is close to the middle, which supports out assertion that we fail to reject the null hypothesis.
+
+    - Analysis Process: \
+        As we think the missingness of the `rating` column, which has a proportion around **0.064135** missing, may relate to whether it has *wheat* in its `ingredients` or not. Thus we performed a **permutation test** again to investigate this question.
+
+        Moreover, we have the **empirical distribution** of our permutation test, and we can see that the **observation** lies in the position that is **close to the middle**, which supports out assertion that we **fail to reject** the null hypothesis.
     <iframe src="assets/rating_vs._has_wheat1.html" width=800 height=600 frameBorder=0></iframe>
 
-    - `Result`: according to our permutation test, the p-value is `0.301`, which is greater than our significance level: `0.05`, thus we fail to reject the null hypothesis.
+    - Result: \
+        According to our permutation test, the **p-value** is **0.301**, which is **greater** than our significance level of **0.05**. Thus, we **fail to reject** the null hypothesis.
 
 ---
 
