@@ -66,13 +66,13 @@ At the same time, there are **83782 rows** in the `recipes` dataset, and we will
 - Here is the distribution of `minutes` (excluded extreme outliers) in our adjusted recipes dataset `recipes_new`:
 <iframe src="assets/minutes_distribution.html" width=800 height=600 frameBorder=0></iframe>
 
- - As we can see **most** recipes takes less than 3 hours (180 minutes) to complete. Moreover, we excluded some extremely large outliers that could potentially make our estimation biasedly high. Since there are only **a few** of them, excluding those values would not introduce significant influence to our analysis.
+As we can see **most** recipes takes less than 3 hours (180 minutes) to complete. Moreover, we excluded some extremely large outliers that could potentially make our estimation biasedly high. Since there are only **a few** of them, excluding those values would not introduce significant influence to our analysis.
 
 
 - Here is the distribution of `ratings`, in our adjusted interactions dataset `interactions_new`:
 <iframe src="assets/ratings_distribution.html" width=800 height=600 frameBorder=0></iframe>
 
- - In this distribution of ratings across various recipes, we can observe that **most** recipes have the **highest rating score, 5**, which inspired us to explore  that whether there is a relationship between the timing and the rating of the recipe.
+In this distribution of ratings across various recipes, we can observe that **most** recipes have the **highest rating score, 5**, which inspired us to explore  that whether there is a relationship between the timing and the rating of the recipe.
 
 Later on, we will study on this question. Now, let us take a look at bivariate analysis of our dataset.
 
@@ -136,13 +136,13 @@ Moreover, the missingness of `avg_rating` relates to the missingness of the `rat
     
     - As we can see in the above graph, the distribution of step numbers when `rating` is missing has a **bimodal** distribution, which is different from that of the distribution of *step numbers* when `rating` is not missing. Thus, we think an appropriate test statistic in this situation is the **Kolmogorov-Smirnov** test statistic. Without looking **in such a detailed scope** we may say that these two distribution looks similar, but if we compare the **cdf**s of these two distribution, we would realize that the difference is apparent.
 
-    - Analysis process: 
+    - Analysis process: \
         The missingness of the `rating` column may depend on `n_steps` a recipe requires. As there are a proportion around **0.064135** of data in the `rating` column are missing, we would like to make a **permutation test** to see if the missingness of the `rating` of a recipe actually depends on how many steps it has.
 
         Here, we have the **empirical distribution** of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, which implies that we should **reject** the null hypothesis of this permutation test.
     <iframe src="assets/rating_vs._nsteps1.html" width=800 height=600 frameBorder=0></iframe>
 
-    - Result: 
+    - Result: \
         Accoridng to the permutation test we conducted, the **p-value** is **0.0**, which is much smaller than our significant level of **0.05**. Thus, we **reject** the null hypothesis. 
 
 2. In our analysis, we also tried to explore whether the missingness of the *rating* column depends on the recipe has `wheat` in its *ingredients* or not.
