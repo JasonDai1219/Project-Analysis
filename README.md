@@ -108,10 +108,12 @@ As shown in the above pivot table, we used the `merged` dataframe, which has the
 ---
 ## Assessment of Missingness
 
-### NMAR Analysis
-First of all, for the only missing value in the `name` column, we conclude it as Missing Completely At Random (`MCAR`). Since all the values in recipe_id, minutes, contributor_id, and submitted are filled, the probability of a missing name is unrelated to any other columns, and also it is unlikely that the name is missing because of some properties of itself. 
+For the `merged` dataset, there is one row that has missing `user_id` and `date`, which means that this recipe was not reviewed, and it is not in the `interactions` dataset so we drop the row. Therefore, for the revised `merged` dataset, there are three columns contain missing values, `name`, `avg_rating`, and `rating`. 
 
-Moreover, the missingness of avg_rating relates to the missingness of the rating column, so it is not `NMAR`. Thus, through observing the missingness of the rating column, as permutation test shown in the later part, the missingess of the rating column has a relationship with the `n_step` column, so we also conclude that the missingness of rating column is `MAR`, not `NMAR`. All in all, we do not observe `NMAR` missingness in our dataset's three columns that has missing values.
+### NMAR Analysis
+First of all, for the only missing value in the `name` column, we conclude it as **Missing Completely At Random (MCAR)**. Since all the values in `recipe_id`, `minutes`, `contributor_id`, and `submitted` are filled, the probability of a missing name is unrelated to any other columns, and also it is unlikely that the name is missing because of some properties of itself. 
+
+Moreover, the missingness of `avg_rating` relates to the missingness of the `rating` column, so it is **Missing At Random(MAR)**, not NMAR. Thus, through observing the missingness of the `rating` column, as permutation test shown in the later part, the missingess of the `rating` column has a relationship with the `n_step` column, so we also conclude that the missingness of `rating` column is also **MAR**, not NMAR. All in all, we do not observe NMAR missingness in our dataset's three columns that has missing values.
 
 ---
 
@@ -119,24 +121,29 @@ Moreover, the missingness of avg_rating relates to the missingness of the rating
 
 - we see that the 'rating` column is the one that has most missing values, therefore, we would like to investigate on the missingness of that column.
 
-1. In our analysis, we tried to explore whether the missingness of the *rating* column depends on *the number of steps*.
+1. In our analysis, we tried to explore whether the missingness of the `rating` column depends on the number of steps, `n_steps`.
 
-    - Null hypothesis:
-        - The observed difference of distributions among recipes that have ratings and recipes that do not have ratings is because of random chance.
+    Null hypothesis:
+    > The observed difference of distributions among recipes that have ratings and recipes that do not have ratings is because of random chance.
 
-    - Alternative hypothesis:
-        - The observed difference is not due to random chance of those two groups.
+    Alternative hypothesis:
+    > The observed difference is not due to random chance of those two groups.
 
-    - The significance level is at 5%
+    - The significance level is at 5%.
 
-    - Here is the graph showing where the observation lies in the distribution of  *the number of steps* when *rating* is missing and when *rating* is not missing.
+    Here is the graph showing where the observation lies in the distribution of  `n_steps` when `rating` is missing and when `rating` is not missing.
     <iframe src="assets/n_steps_by_missingness_of_ratings.html" width=800 height=600 frameBorder=0></iframe>
-    - As we can see in the above graph, the distribution of step numbers when rating is missing has a `bimodal` distribution, which is different from that of the distribution of *step numbers* when rating is not missing. Thus, we think an appropriate test statistic in this situation is the `Kolmogorov-Smirnov` test statistic. Since without looking `in such a detailed scope` we may say that these two distribution looks similar, but if we compare the `cdf`s of these two distribution, we would realize that the difference is apparent.
-    - `Analysis process`: we think the missingness of the `rating` column may depends on `the number of steps` a recipe requires, as there are a proportion around `0.064135` of datas in the `rating` column are missing. Therefore, we would like to make a permutation test to see if the missingnes of `rating` of a recipe actually depends on how many `steps` it has.
-    - And here, we have the empirical dustribution of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, therefore, that implies that we should reject the null hypothesis of this permutation test.
+    
+    - As we can see in the above graph, the distribution of step numbers when `rating` is missing has a **bimodal** distribution, which is different from that of the distribution of *step numbers* when `rating` is not missing. Thus, we think an appropriate test statistic in this situation is the **Kolmogorov-Smirnov** test statistic. Without looking **in such a detailed scope** we may say that these two distribution looks similar, but if we compare the **cdf**s of these two distribution, we would realize that the difference is apparent.
+
+    - Analysis process: 
+        The missingness of the `rating` column may depend on `n_steps` a recipe requires. As there are a proportion around **0.064135** of data in the `rating` column are missing, we would like to make a **permutation test** to see if the missingness of the `rating` of a recipe actually depends on how many steps it has.
+
+        Here, we have the **empirical distribution** of our permutation test, and we can see that the observation lies almost outside the whole empirical distribution, which implies that we should **reject** the null hypothesis of this permutation test.
     <iframe src="assets/rating_vs._nsteps1.html" width=800 height=600 frameBorder=0></iframe>
 
-    - `Result`: accoridng to the permutation test we made, the p-value is `0.0`, which is much smaller than our significant level, thus we reject the null hypothesis. 
+    - Result: 
+        Accoridng to the permutation test we conducted, the **p-value** is **0.0**, which is much smaller than our significant level of **0.05**. Thus, we **reject** the null hypothesis. 
 
 2. In our analysis, we also tried to explore whether the missingness of the *rating* column depends on the recipe has `wheat` in its *ingredients* or not.
     - Null hypothesis:
