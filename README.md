@@ -119,7 +119,7 @@ Moreover, the missingness of `avg_rating` relates to the missingness of the `rat
 
 ### Missingness Dependency
 
-- we see that the 'rating` column is the one that has most missing values, therefore, we would like to investigate on the missingness of that column.
+- We see that the 'rating` column is the one that has most missing values, therefore, we would like to investigate on the missingness of that column.
 
 1. In our analysis, we tried to explore whether the missingness of the `rating` column depends on the number of steps, `n_steps`.
 
